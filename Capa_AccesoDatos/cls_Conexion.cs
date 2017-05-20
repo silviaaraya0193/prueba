@@ -69,7 +69,7 @@ namespace Capa_AccesoDatos
                 return false;
             }
 
-        }//fin del metodo que abre la conexion 
+        }//fin del metodo que abre la conexion  
         /*----------Metodo que obtiene la conexion abierta a la BD------*/
         private SqlConnection getConexion() {
             if (mConectar())
