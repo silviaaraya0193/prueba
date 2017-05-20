@@ -32,6 +32,7 @@ namespace Capa_AccesoDatos
         }
         #endregion
 
+
         #region "Set_get"
             
         #endregion
@@ -75,6 +76,7 @@ namespace Capa_AccesoDatos
             if (mConectar())
             {
                 return conexion;
+
             }//fin del if que verifica si es posible abrir la conexion
             else {
                 return null;
