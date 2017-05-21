@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_EntidadNegocio;
-
+using Capa_AccesoDatos;
 namespace Capa_Presentacion
 {
     public partial class frmRole : Form
@@ -58,8 +58,23 @@ namespace Capa_Presentacion
         {
             Close();
         }
+
         #endregion
 
-        
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cls_Conexion conexion = new cls_Conexion();
+                conexion.mGuardarRole(this.txtNombre.Text.Trim(), Convert.ToInt32(this.txtCodigo.Text.Trim()));
+                MessageBox.Show("Perfil insertado correctamente" + this.txtNombre.Text, "Registro realizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Verifique los datos del role", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Capa_EntidadNegocio
         private String perfil;
         private String codigo;
         #endregion
+
         #region Set/Get
         public String pLogin {
             set {
@@ -39,7 +40,7 @@ namespace Capa_EntidadNegocio
                 {
                     password = value;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
 
                     throw new Exception("No se permiten campos en blanco");
@@ -61,6 +62,7 @@ namespace Capa_EntidadNegocio
             get { return codigo; }
         }
         #endregion
+
         #region Constructor
         public cls_EntidadUsuario() {
             pPassword = "";

@@ -64,6 +64,7 @@ namespace Capa_Presentacion
         {
             this.Close();
             vLogin.Close();
+            this.Dispose();
         }
 
         /*-----------------------Menu Usuario-------------------*/
@@ -71,7 +72,7 @@ namespace Capa_Presentacion
         {
 
         }
-
+        
         /*-----------------------Menu seguridad-------------------*/
         private void smRole_Click(object sender, EventArgs e)
         {
@@ -81,7 +82,8 @@ namespace Capa_Presentacion
         private void smPermisos_Click(object sender, EventArgs e)
         {
             frmPermisos permiso = new frmPermisos(mGetCredencialEspecifica("Vista_Permisos"));
-            permiso.Show();
+            permiso.cargarRolesComboBox();
+            permiso.ShowDialog();
         }
         #endregion
 
@@ -110,11 +112,11 @@ namespace Capa_Presentacion
             switch(vista){
                 case "Vista_Usuario":
                     mUsuarios.Visible = true;
-                    smUsuario.Visible = true;
+                    smUsuario.Visible = true;//toot trip usuario
                     break;
                 case "Vista_Permisos":
                     mSeguridad.Visible = true;
-                    smPermisos.Visible = true;
+                    smPermisos.Visible = true;//tool trip permisos
                     break;
                 case "Vista_Roles":
                     mSeguridad.Visible = true;
