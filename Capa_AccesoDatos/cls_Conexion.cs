@@ -47,7 +47,7 @@ namespace Capa_AccesoDatos
         private String pStringConexionSQLEXPRESS(cls_Conexion conexion)
         {
             return "user id='" + conexion.strCodigo + "'; password='" + conexion.strClave + "'; Data Source='" + pNombreServidor() + "\\SQLEXPRESS'; Initial Catalog='" + strDB + "'";
-        }//fin del metodo que obtiene el String de la conexion con sql express al conexion
+        }//fin del metodo que obtiene el String de la conexion con sqlexpress al conexion
         /*--------------Abrir la conexion a la base de datos*/
         private Boolean mConectar() {
             try
@@ -138,7 +138,207 @@ namespace Capa_AccesoDatos
             conexion.Dispose();
         }//fin del emtodo que cierra la conexion a la base de datos
        
+        //Metodo que guarda los roles ... 
+        public void mGuardarRole(String nombreRole, int codigoRole)
+        {
+            try
+            {
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "Insert into TB_ROLE(CODIGO_ROLE,nombre) values(@codigo,@nombre)";
+                this.comando.Parameters.AddWithValue("@codigo", codigoRole);
+                this.comando.Parameters.AddWithValue("@nombre", nombreRole);
+                comando.ExecuteNonQuery();
+                mCerrarConexion();
+            }
+            catch (Exception )
+            {
 
+                throw new Exception("Error bd");
+            }
+            
+        }
+        //metodo que regresa los roles existente
+
+        public string[] mRetornarRolSinUso()
+        {
+            try
+            {
+                SqlDataReader lectura;
+                string[] roles;
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                List<string> numbersList = new List<string>();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "select CODIGO_ROLE FROM TB_ROLE WHERE CODIGO_ROLE NOT IN(SELECT CODIGO_ROLE FROM TB_ROLE_USUARIO)";
+                lectura = this.comando.ExecuteReader();
+                if (lectura.Read())
+                {
+                    while (lectura.Read()) {
+                        numbersList.Add(Convert.ToString(lectura["CODIGO_ROLE"]));
+                    }
+                    roles = numbersList.ToArray();
+                    lectura.Close();
+                    mCerrarConexion();
+                    return roles;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public DataSet mRolesUtilizados()
+        {
+            try
+            {
+                DataSet datos;//devuelve el registro completo
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                datos = new DataSet("CODIGO_ROLE");
+                this.comando = new SqlCommand();
+                this.comando.Connection = getConexion();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "Select CODIGO_ROLE,NOMBRE FROM TB_ROLE WHERE CODIGO_ROLE  IN(SELECT CODIGO_ROLE FROM TB_ROLE_USUARIO)";
+
+                //en este punt0 se llena el dataset por medio del adaptador 
+                adaptador.SelectCommand = this.comando;
+                adaptador.Fill(datos);
+                //
+                mCerrarConexion();
+                adaptador.Dispose();
+
+                return datos;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        //guarda las vistas
+        public void guardarVista(int numeroVista,string nombreVista)
+        {
+            try
+            {
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "Insert into TB_VISTAS(ID_VISTA,NOMBRE_VISTA) values(@codigo,@nombre)";
+                this.comando.Parameters.AddWithValue("@codigo", numeroVista);
+                this.comando.Parameters.AddWithValue("@nombre", nombreVista);
+                comando.ExecuteNonQuery();
+                mCerrarConexion();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error bd");
+            }
+        }
+        public string[] mVistasCreadas()
+        {
+            try
+            {
+                SqlDataReader lectura;
+                string[] vistas;
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                List<string> numbersList = new List<string>();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "select ID_VISTA FROM TB_VISTAS";
+                lectura = this.comando.ExecuteReader();
+                if (lectura.Read())
+                {
+                    while (lectura.Read())
+                    {
+                        numbersList.Add(Convert.ToString(lectura["ID_VISTA"]));
+                    }
+                    vistas = numbersList.ToArray();
+                    lectura.Close();
+                    mCerrarConexion();
+                    return vistas;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void mRolesVentanas()
+        {
+
+        }
+        public Boolean mConsultarUsuario(int codigo)
+        {
+            try
+            {
+                SqlDataReader lectura;
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "SELECT NOMBRE FROM TB_USUARIO WHERE CODIGO_USUARIO=@CODIGO";
+                this.comando.Parameters.AddWithValue("@codigo", codigo);
+                lectura = this.comando.ExecuteReader();
+                if (lectura.Read())
+                {
+                    mCerrarConexion();
+                    return true;
+                }
+                else
+                {
+                    mCerrarConexion();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+        public Boolean  mPermisos(cls_EntidadPermiso permiso)
+        {
+            try
+            {
+                Console.WriteLine("AgregarPermisos 1 ");
+                comando = new SqlCommand();
+                comando.Connection = getConexion();
+                this.comando.CommandType = CommandType.Text;
+                this.comando.CommandText = "INSERT INTO TB_PERMISOS(CODIGO_PERMISO,CODIGO_VISTA,SELECCION,INSERCION,ACTUALIZACION,BORRADO)" +
+                                           " VALUES(@COD_PERMISO,@COD_VISTA,@SELECCION,@INSERCION,@ACTUALIZACION,@BORRADO)";
+                this.comando.Parameters.AddWithValue("@COD_PERMISO", Convert.ToInt32(permiso.pCodPermiso));
+                this.comando.Parameters.AddWithValue("@COD_VISTA", Convert.ToInt32(permiso.pCodVista));
+                this.comando.Parameters.AddWithValue("@SELECCION", Convert.ToBoolean(permiso.pSelect));
+                this.comando.Parameters.AddWithValue("@INSERCION", Convert.ToBoolean(permiso.pInsert));
+                this.comando.Parameters.AddWithValue("@BORRADO", Convert.ToBoolean(permiso.pDelete));
+                this.comando.Parameters.AddWithValue("@ACTUALIZACION", Convert.ToBoolean(permiso.pUpdate));
+                //this.comando.Parameters.AddWithValue("@BORRADO", permiso.pCodPermiso);
+                Console.WriteLine("AgregarPermisos 2 ");
+                comando.ExecuteNonQuery();
+                mCerrarConexion();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+           
+
+        }
         #endregion
     }
 }

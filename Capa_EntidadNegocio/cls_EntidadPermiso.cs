@@ -21,8 +21,9 @@ namespace Capa_EntidadNegocio
         private String nomRole;
         #endregion
 
-
-        public cls_EntidadPermiso() {
+        #region "Constructor"
+        public cls_EntidadPermiso()
+        {
             pCodPermiso = "";
             pCodVista = "";
             pSelect = "";
@@ -34,6 +35,8 @@ namespace Capa_EntidadNegocio
             pCodRole = "";
             pNomRole = "";
         }
+        #endregion
+
 
         #region Set/Get
         public String pCodPermiso {

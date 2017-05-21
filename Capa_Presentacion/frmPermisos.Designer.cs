@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -37,34 +38,37 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.tbctrlOpciones = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cbxSinAgregar = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lstRolesAgregados = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodigoUsuarioRole = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarLista = new System.Windows.Forms.Button();
+            this.checkDelete = new System.Windows.Forms.CheckBox();
+            this.cbxVistas = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.checkUpdate = new System.Windows.Forms.CheckBox();
+            this.checkInsert = new System.Windows.Forms.CheckBox();
+            this.checkSelect = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtCodigoUsuarioVista = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.btnAgregarLista = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtCodigoPermiso = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlBotones.SuspendLayout();
             this.tbctrlOpciones.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -163,11 +167,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cbxSinAgregar);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.lstRolesAgregados);
-            this.tabPage1.Controls.Add(this.txtLogin);
+            this.tabPage1.Controls.Add(this.txtCodigoUsuarioRole);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
@@ -177,48 +181,36 @@
             this.tabPage1.Text = "Asignar Roles a Usuario";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // cbxSinAgregar
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.listView1);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1132, 365);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Asignar Permisos Directos";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.cbxSinAgregar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSinAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxSinAgregar.FormattingEnabled = true;
+            this.cbxSinAgregar.Location = new System.Drawing.Point(198, 161);
+            this.cbxSinAgregar.Name = "cbxSinAgregar";
+            this.cbxSinAgregar.Size = new System.Drawing.Size(263, 32);
+            this.cbxSinAgregar.TabIndex = 7;
+            this.cbxSinAgregar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // tabPage3
+            // label3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1132, 305);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Asignar Permisos a Roles";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 24);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Roles sin Agregar";
             // 
-            // txtLogin
+            // label2
             // 
-            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(198, 29);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(163, 29);
-            this.txtLogin.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Código Usuario";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(764, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Lista Roles Agregados";
             // 
             // lstRolesAgregados
             // 
@@ -243,53 +235,133 @@
             this.columnHeader2.Text = "Nombre Role";
             this.columnHeader2.Width = 307;
             // 
-            // label2
+            // txtCodigoUsuarioRole
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(764, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 24);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Lista Roles Agregados";
+            this.txtCodigoUsuarioRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoUsuarioRole.Location = new System.Drawing.Point(198, 29);
+            this.txtCodigoUsuarioRole.Name = "txtCodigoUsuarioRole";
+            this.txtCodigoUsuarioRole.Size = new System.Drawing.Size(163, 29);
+            this.txtCodigoUsuarioRole.TabIndex = 3;
+            this.txtCodigoUsuarioRole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_KeyPress);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 24);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Roles sin Agregar";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Código Usuario";
             // 
-            // comboBox1
+            // tabPage2
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(198, 161);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 32);
-            this.comboBox1.TabIndex = 7;
+            this.tabPage2.Controls.Add(this.txtCodigoPermiso);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Controls.Add(this.txtCodigoUsuarioVista);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1132, 365);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Asignar Permisos Directos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // textBox1
+            // groupBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(179, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 29);
-            this.textBox1.TabIndex = 5;
+            this.groupBox1.Controls.Add(this.btnAgregarLista);
+            this.groupBox1.Controls.Add(this.checkDelete);
+            this.groupBox1.Controls.Add(this.cbxVistas);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.checkUpdate);
+            this.groupBox1.Controls.Add(this.checkInsert);
+            this.groupBox1.Controls.Add(this.checkSelect);
+            this.groupBox1.Location = new System.Drawing.Point(25, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(363, 232);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Opciones";
             // 
-            // label4
+            // btnAgregarLista
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Código Usuario";
+            this.btnAgregarLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarLista.Location = new System.Drawing.Point(82, 183);
+            this.btnAgregarLista.Name = "btnAgregarLista";
+            this.btnAgregarLista.Size = new System.Drawing.Size(147, 35);
+            this.btnAgregarLista.TabIndex = 6;
+            this.btnAgregarLista.Text = "Agregar a la Lista";
+            this.btnAgregarLista.UseVisualStyleBackColor = true;
+            this.btnAgregarLista.Click += new System.EventHandler(this.btnAgregarLista_Click);
+            // 
+            // checkDelete
+            // 
+            this.checkDelete.AutoSize = true;
+            this.checkDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDelete.Location = new System.Drawing.Point(207, 153);
+            this.checkDelete.Name = "checkDelete";
+            this.checkDelete.Size = new System.Drawing.Size(81, 24);
+            this.checkDelete.TabIndex = 3;
+            this.checkDelete.Text = "Delete";
+            this.checkDelete.UseVisualStyleBackColor = true;
+            // 
+            // cbxVistas
+            // 
+            this.cbxVistas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVistas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVistas.FormattingEnabled = true;
+            this.cbxVistas.Location = new System.Drawing.Point(82, 35);
+            this.cbxVistas.Name = "cbxVistas";
+            this.cbxVistas.Size = new System.Drawing.Size(263, 32);
+            this.cbxVistas.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 24);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Vistas";
+            // 
+            // checkUpdate
+            // 
+            this.checkUpdate.AutoSize = true;
+            this.checkUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkUpdate.Location = new System.Drawing.Point(207, 88);
+            this.checkUpdate.Name = "checkUpdate";
+            this.checkUpdate.Size = new System.Drawing.Size(87, 24);
+            this.checkUpdate.TabIndex = 2;
+            this.checkUpdate.Text = "Update";
+            this.checkUpdate.UseVisualStyleBackColor = true;
+            // 
+            // checkInsert
+            // 
+            this.checkInsert.AutoSize = true;
+            this.checkInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInsert.Location = new System.Drawing.Point(42, 153);
+            this.checkInsert.Name = "checkInsert";
+            this.checkInsert.Size = new System.Drawing.Size(75, 24);
+            this.checkInsert.TabIndex = 1;
+            this.checkInsert.Text = "Insert";
+            this.checkInsert.UseVisualStyleBackColor = true;
+            // 
+            // checkSelect
+            // 
+            this.checkSelect.AutoSize = true;
+            this.checkSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSelect.Location = new System.Drawing.Point(42, 88);
+            this.checkSelect.Name = "checkSelect";
+            this.checkSelect.Size = new System.Drawing.Size(79, 24);
+            this.checkSelect.TabIndex = 0;
+            this.checkSelect.Text = "Select";
+            this.checkSelect.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -301,22 +373,34 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Lista Permisos Agregados";
             // 
-            // listView1
+            // txtCodigoUsuarioVista
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(422, 52);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(665, 284);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.txtCodigoUsuarioVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoUsuarioVista.Location = new System.Drawing.Point(167, 25);
+            this.txtCodigoUsuarioVista.Name = "txtCodigoUsuarioVista";
+            this.txtCodigoUsuarioVista.Size = new System.Drawing.Size(163, 29);
+            this.txtCodigoUsuarioVista.TabIndex = 5;
+            this.txtCodigoUsuarioVista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoUsuario_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Código Usuario";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1132, 365);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Asignar Permisos a Roles";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // columnHeader3
             // 
@@ -348,95 +432,41 @@
             this.columnHeader8.Text = "Delete";
             this.columnHeader8.Width = 76;
             // 
-            // comboBox2
+            // listView1
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(82, 35);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(263, 32);
-            this.comboBox2.TabIndex = 9;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(422, 52);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(665, 284);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // label6
+            // txtCodigoPermiso
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 24);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Vistas";
+            this.txtCodigoPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoPermiso.Location = new System.Drawing.Point(167, 77);
+            this.txtCodigoPermiso.Name = "txtCodigoPermiso";
+            this.txtCodigoPermiso.Size = new System.Drawing.Size(163, 29);
+            this.txtCodigoPermiso.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.txtCodigoPermiso, "Ingrese el codigo del permiso");
             // 
-            // groupBox1
+            // label7
             // 
-            this.groupBox1.Controls.Add(this.btnAgregarLista);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 232);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opciones";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(42, 88);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Select";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(42, 153);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(75, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Insert";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(207, 88);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(87, 24);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Update";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(207, 153);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(81, 24);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Delete";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarLista
-            // 
-            this.btnAgregarLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarLista.Location = new System.Drawing.Point(82, 183);
-            this.btnAgregarLista.Name = "btnAgregarLista";
-            this.btnAgregarLista.Size = new System.Drawing.Size(147, 35);
-            this.btnAgregarLista.TabIndex = 6;
-            this.btnAgregarLista.Text = "Agregar a la Lista";
-            this.btnAgregarLista.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 24);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Código Permiso";
             // 
             // frmPermisos
             // 
@@ -474,17 +504,28 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtCodigoUsuarioRole;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView lstRolesAgregados;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxSinAgregar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigoUsuarioVista;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAgregarLista;
+        private System.Windows.Forms.CheckBox checkDelete;
+        private System.Windows.Forms.ComboBox cbxVistas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkUpdate;
+        private System.Windows.Forms.CheckBox checkInsert;
+        private System.Windows.Forms.CheckBox checkSelect;
+        private System.Windows.Forms.TextBox txtCodigoPermiso;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
@@ -492,13 +533,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnAgregarLista;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
